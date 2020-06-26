@@ -8,9 +8,8 @@ function preload() {
     imagemInimigoTrol = loadImage('imagens/inimigos/troll.png')
     imagemGotinhaVoador = loadImage('imagens/inimigos/gotinha-voadora.png')
     imagemTelaInicial = loadImage('imagens/assets/telaInicial.png')
+    imagemVida = loadImage('imagens/assets/coracao.png')
     fonte = loadFont('imagens/assets/fonteTelaInicial.otf')
-
-
 
 
     //sons

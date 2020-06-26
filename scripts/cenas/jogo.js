@@ -8,6 +8,8 @@ class Jogo {
 
         pontuacao = new Pontuacao()
 
+        vida = new Vida()
+
         personagem = new Personagem(
             matrizPersonagem,
             imagemPersonagem,
@@ -73,6 +75,8 @@ class Jogo {
    draw(){
        cenario.exibe()
        cenario.move()
+
+       vida.draw()
 
        pontuacao.exibe()
        pontuacao.adicionarPontos()

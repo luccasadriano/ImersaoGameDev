@@ -13,8 +13,8 @@ function setup() {//setup é executado uma vez antes do jogo ser iniciado (passa
         telaInicial
     }
 
-        // somDoJogo.loop()
-        frameRate(40)
+    // somDoJogo.loop()
+    frameRate(40)
 
     botaoGerenciar = new BotaoGerenciar('Iniciar', width / 2, height / 2)
 

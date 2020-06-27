@@ -8,6 +8,7 @@ let imagemGameOver
 let imagemTelaInicial
 let imagemVida
 let fonte
+let fita
 
 //sons
 let somDoJogo
@@ -16,18 +17,19 @@ let somDoPulo
 //variaveis
 let jogo
 
-let cenaAtual = 'jogo'
+let cenaAtual = 'telaInicial'
 let cenas
 let telaInicial
 let botaoGerenciar
 
 let cenario
+let vida
 let personagem
 let inimigoGotinha
 let inimigoTroll
 let inimigoGotinhaVoador
 let pontuacao
-let vida
+
 
 
 //matriz gotinha

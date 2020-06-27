@@ -1,14 +1,20 @@
 class Jogo {
     constructor(){
-        this.inimigoAtual = 0
+        this.indice = 0
+
+        this.mapa = fita.mapa
 
     }
     setup(){
-        cenario = new Cenario(imagemCenario, 1)
+        cenario = new Cenario(imagemCenario, 2)
+
+        // if(cenaAtual === 'jogo'){
+        //     somDoJogo.loop()
+        //     }
+
+        vida = new Vida(fita.configuracoes.vidaMaxima, fita.configuracoes.vidaInicial)
 
         pontuacao = new Pontuacao()
-
-        vida = new Vida()
 
         personagem = new Personagem(
             matrizPersonagem,
@@ -30,20 +36,7 @@ class Jogo {
             52,
             104,
             104,
-            10, 
-            100
-        )
-        const inimigoGotinhaVoador = new Inimigo(
-            matrizGotinhaVoador,
-            imagemGotinhaVoador,
-            width - 52,
-            200,
-            100,
-            75,
-            200,
-            150,
-            10, 
-            100
+            10
         )
 
         const inimigoTroll = new Inimigo(
@@ -55,8 +48,19 @@ class Jogo {
             200,
             400,
             400,
-            15,
-            100
+            15
+        )
+
+        const inimigoGotinhaVoador = new Inimigo(
+            matrizGotinhaVoador,
+            imagemGotinhaVoador,
+            width - 52,
+            200,
+            100,
+            75,
+            200,
+            150,
+            10
         )
 
         inimigos.push(inimigoGotinha)
@@ -73,6 +77,7 @@ class Jogo {
     }
 
    draw(){
+
        cenario.exibe()
        cenario.move()
 
@@ -84,28 +89,34 @@ class Jogo {
        personagem.exibe()
        personagem.aplicaGravidade()
 
-       const inimigo = inimigos [this.inimigoAtual]
+       const linhaAtual = this.mapa[this.indice]
+
+       const inimigo = inimigos [linhaAtual.inimigo]
        const inimigoVisivel = inimigo.x < - inimigo.larguraPerso
+
+       inimigo.velocidade = linhaAtual.velocidade
 
        inimigo.exibe()
        inimigo.move()
 
-
        if(inimigoVisivel){
-           this.inimigoAtual++
-        if(this.inimigoAtual > 2){
-            this.inimigoAtual = 0
-        }
-        inimigo.velocidade = parseInt(random(10, 20))
+           this.indice++
+           inimigo.aparece()
+           if(this.indice > this.mapa.length - 1){
+               this.indice = 0
+            }
         }
 
         if(personagem.colidiu(inimigo)){
             console.log('colidiu')
+            
+            vida.perdeVida()
+            personagem.ficaInvencivel()
+
+            if(vida.vidas === 0){
             image(imagemGameOver, width / 2 - 200, height / 2)
             noLoop()
+            }
         }
     }
-
-
-
 }

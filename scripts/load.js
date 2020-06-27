@@ -10,7 +10,7 @@ function preload() {
     imagemTelaInicial = loadImage('imagens/assets/telaInicial.png')
     imagemVida = loadImage('imagens/assets/coracao.png')
     fonte = loadFont('imagens/assets/fonteTelaInicial.otf')
-
+    fita = loadJSON('fita/fita.json')
 
     //sons
     somDoJogo = loadSound('sons/trilha_jogo.mp3')

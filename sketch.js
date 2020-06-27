@@ -1,5 +1,3 @@
-
-
 function setup() {//setup é executado uma vez antes do jogo ser iniciado (passar variaveis, valores etc)
     createCanvas(windowWidth, windowHeight);
 
@@ -13,7 +11,11 @@ function setup() {//setup é executado uma vez antes do jogo ser iniciado (passa
         telaInicial
     }
 
-    // somDoJogo.loop()
+    // if(cenaAtual == 'jogo'){
+    //     somDoJogo.loop()
+    // }
+
+
     frameRate(40)
 
     botaoGerenciar = new BotaoGerenciar('Iniciar', width / 2, height / 2)

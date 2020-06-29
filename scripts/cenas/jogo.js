@@ -112,9 +112,11 @@ class Jogo {
             
             vida.perdeVida()
             personagem.ficaInvencivel()
+            somDeDano.play()
 
             if(vida.vidas === 0){
             image(imagemGameOver, width / 2 - 200, height / 2)
+            somDoJogo.stop()
             noLoop()
             }
         }

@@ -37,6 +37,14 @@ class Personagem extends Animacao {
             this.invencivel = false
         }, 1000)
     }
+        //Desenhar o retangulo no personagem para verificar a colisão
+        // noFill()
+        // rect(this.x, this.y, this.larguraPerso, this.alturaPerso)
+        // rect(
+        //     gotinha.x,
+        //     gotinha.y,
+        //     gotinha.larguraPerso,
+        //     gotinha.alturaPerso)
     colidiu(inimigo){
         if(this.invencivel){
             return false
@@ -57,12 +65,3 @@ class Personagem extends Animacao {
     }
 
 }
-
-        //Desenhar o retangulo no personagem para verificar a colisão
-        // noFill()
-        // rect(this.x, this.y, this.larguraPerso, this.alturaPerso)
-        // rect(
-        //     gotinha.x,
-        //     gotinha.y,
-        //     gotinha.larguraPerso,
-        //     gotinha.alturaPerso)

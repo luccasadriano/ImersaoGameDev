@@ -13,6 +13,7 @@ let fita
 //sons
 let somDoJogo
 let somDoPulo
+let somDeDano
 
 //variaveis
 let jogo
